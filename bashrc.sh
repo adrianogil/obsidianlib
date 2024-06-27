@@ -5,8 +5,7 @@ function obsidian-open() {
     target_vault=$2
 
     if [ -z "$target_file" ]; then
-        echo "No target file provided"
-        return 1
+        target_file=$(f "*.md" | default-fuzzy-finder)
     fi
 
     if [ -z "$target_vault" ]; then
