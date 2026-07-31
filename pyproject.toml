@@ -12,6 +12,9 @@ license = { file = "LICENSE" }
 authors = [
   { name = "Obsidianlib Contributors" }
 ]
+dependencies = [
+  "PyYAML>=6.0",
+]
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Developers",
