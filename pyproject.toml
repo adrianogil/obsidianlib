@@ -33,6 +33,9 @@ classifiers = [
 "Source" = "https://example.com/obsidianlib"
 "Issues" = "https://example.com/obsidianlib/issues"
 
+[project.scripts]
+obsidian-backlinks = "obsidianlib.cli:main"
+
 [tool.setuptools]
 package-dir = {"" = "src"}
 
