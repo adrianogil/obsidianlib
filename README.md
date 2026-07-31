@@ -40,6 +40,31 @@ cat note.md | obsidian-backlinks
 obsidian-backlinks --keep-duplicates --exclude-embeds note.md
 ```
 
+## Note titles and aliases
+
+Convert a Markdown filename to a display title and create stable comparison
+keys for the filename, optional frontmatter title, and existing aliases:
+
+```python
+from obsidianlib import filename_to_title, note_title_keys_from_markdown
+
+markdown = """---
+aliases: [Résumé, CV]
+---
+"""
+
+filename_to_title("Curriculum  Vitae.md")
+# "Curriculum Vitae"
+
+note_title_keys_from_markdown("Curriculum Vitae.md", markdown)
+# ("curriculum vitae", "résumé", "cv")
+```
+
+`normalize_note_title(title)` is also available for individual values. It
+normalizes Unicode compatibility forms, typographic dash and quote variants,
+case, and whitespace while retaining meaningful punctuation such as `+` and
+`#`. Re-normalizing a key is idempotent.
+
 ## Development
 
 Build the package locally:
